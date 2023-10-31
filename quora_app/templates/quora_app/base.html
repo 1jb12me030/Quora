@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quora</title>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="{% url 'view_questions' %}">View Questions</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'post_question' %}">Post Question</a></li>
+            <li><a href="{% url 'logout_user' %}">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'register_user' %}">Register</a></li>
+            <li><a href="{% url 'login_user' %}">Login</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
