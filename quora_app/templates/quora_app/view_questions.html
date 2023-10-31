@@ -1,0 +1,6 @@
+{% for question in questions %}
+  <h3>{{ question.text }}</h3>
+  <p>Posted by: {{ question.user.username }}</p>
+  <a href="{% url 'answer_question' question.id %}">Answer</a>
+  <hr>
+{% endfor %}
